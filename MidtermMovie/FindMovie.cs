@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace MidtermMovie
 {
-    class Program
+    public class Movies
     {
-       
+        static void Main(string[] args)
+        {
 
 
-      
+        }
     }
 }
-
-
