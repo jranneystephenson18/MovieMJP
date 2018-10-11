@@ -22,6 +22,6 @@ namespace MidtermMovie
             this.Director = director;
         }
 
-
+        //joy 
     }
 }
