@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace MidtermMovie
 {
-    public class Actor
+    public class FindActor
     {
-        static void Main(string[] args)
-        {
+  //      static void Main(string[] args)
+    //    {
 
-        }
+   //     }
     }
 }
