@@ -6,65 +6,22 @@ using System.Threading.Tasks;
 
 namespace MidtermMovie
 {
-    class Movies
+   public class Movie
     {
-        public List<Movie> MoviesList = new List<Movie>();
+        public string NameOfMovie { get; set; }
+        public string Actor { get; set; }
+        public string Genre { get; set; }
+        public string Director { get; set; }
 
-       public void AddMovie()
+        public Movie(string nameOfMovie, string actor, string genre, string director)
+
         {
-            Movie movie = new Movie();
-            Console.WriteLine("Enter movie name: ");
-            movie.Name = Console.ReadLine();
-
-            Console.WriteLine("Enter actor name: ");
-            movie.Actor = Console.ReadLine();
-
-            Console.WriteLine("Enter director name: ");
-            movie.Director = Console.ReadLine();
-
-            Console.WriteLine("Enter genre: ");
-            movie.Genre = Console.ReadLine();
-            Console.WriteLine();
-            this.MoviesList.Add(movie);
+            this.NameOfMovie = nameOfMovie;
+            this.Actor = actor;
+            this.Genre = genre;
+            this.Director = director;
         }
 
-        public Movie FindMovie()
-        {
-            Console.WriteLine("Enter movie name: ");
-            string moviename = Console.ReadLine();
-            return this.MoviesList.FirstOrDefault(m => m.Name.ToLower() == moviename.ToLower());
-        }
-
-        public Movie FindMovieByActor()
-        {
-            Console.WriteLine("Enter actor name: ");
-            string actorname = Console.ReadLine();
-            return this.MoviesList.FirstOrDefault(m => m.Actor.ToLower() == actorname.ToLower());
-        }
-
-        public Movie FindMovieByDirector()
-        {
-            Console.WriteLine("Enter director name: ");
-            string directorname = Console.ReadLine();
-            return this.MoviesList.FirstOrDefault(m => m.Director.ToLower() == directorname.ToLower());
-        }
-
-        public void DisplayMovie(Movie movie)
-        {
-            if(movie==null)
-            {
-                Console.WriteLine("No movie found.");
-            }
-            else
-            {
-                Console.WriteLine("The movie's details are:  ");
-                Console.WriteLine("Name :  " + movie.Name);
-                Console.WriteLine("Actor :  " + movie.Actor);
-                Console.WriteLine("Director :  " + movie.Director);
-                Console.WriteLine("Genre :  " + movie.Genre);
-            }
-
-            Console.WriteLine();
-        }
+        //joy 
     }
 }
