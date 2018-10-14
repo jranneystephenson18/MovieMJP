@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace MidtermMovie
 {
-    class Movie
+    public class Movie
     {
-        public string Name { get; set; }
+        public string NameofMovie { get; set; }
         public string Actor { get; set; }
         public string Genre { get; set; }
         public string Director { get; set; }
+
+        public Movie(string nameOfMovie, string actor, string genre, string director)
+
+        {
+            this.NameofMovie = nameOfMovie;
+            this.Actor = actor;
+            this.Genre = genre;
+            this.Director = director;
+        }
     }
 }

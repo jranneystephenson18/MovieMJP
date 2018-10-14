@@ -9,25 +9,25 @@ namespace MidtermMovie
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-        int counter = 0;
+            int counter = 0;
 
-        string[] details;
-        List<Movie> movieDetail = new List<Movie>();
-        // Read the file and display it line by line.  
-        System.IO.StreamReader File = new System.IO.StreamReader(@"C:\Users\vkat9\Documents\Visual Studio 2017\test.txt");
-         while (!File.EndOfStream)
+            string[] details;
+            List<Movie> movieDetail = new List<Movie>();
+              
+            System.IO.StreamReader File = new System.IO.StreamReader(@"C:\Users\vkat9\Documents\Visual Studio 2017\test.txt");
+            while (!File.EndOfStream)
             {
                 var line = File.ReadLine();
                 string[] words = line.Split(',');
-                movieDetail.Add(new Movie(words[0],words[1],words[2],words[3]));
+                movieDetail.Add(new Movie(words[0], words[1], words[2], words[3]));
                 System.Console.WriteLine(line);
-           //     Console.WriteLine(" {0} + {1} ", words[0], words[1]);
-           //     counter++;
+                
             }
 
-         File.Close();
+            File.Close();
             int input;
             do
             {
@@ -48,31 +48,31 @@ namespace MidtermMovie
                     iscorrectiput = int.TryParse(inputstring, out input);
                 }
 
-                Movie searchedmovie;
+                
                 switch (input)
                 {
                     case 1:
-                        searchedmovie = mvoies.FindMovie();
-                        mvoies.DisplayMovie(searchedmovie);
+                        
+                        MovieMethods.MoviesList(movieDetail);
                         break;
 
                     case 2:
-                        searchedmovie = mvoies.FindMovieByActor();
-                        mvoies.DisplayMovie(searchedmovie);
+                        MovieMethods.Actor(movieDetail);
                         break;
 
                     case 3:
-                        searchedmovie = mvoies.FindMovieByDirector();
-                        mvoies.DisplayMovie(searchedmovie);
+                        MovieMethods.Director(movieDetail);
                         break;
 
                     case 4:
-                        mvoies.AddMovie();
-
+                        MovieMethods.AddMovie(movieDetail);
                         break;
 
                     case 5:
                         Console.WriteLine("The program is ended..");
+                        break;
+                    default:
+                        Console.WriteLine("invalid selection");
                         break;
                 }
 
@@ -80,8 +80,10 @@ namespace MidtermMovie
             } while (input != 5);
         }
     }
-}      
-    }
 }
+    
+
+
+
 
 
